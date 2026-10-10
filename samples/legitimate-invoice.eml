@@ -1,0 +1,17 @@
+From: Billing <billing@acme-cloud-example.com>
+To: customer@example.com
+Subject: Your invoice #4471 from Acme Cloud
+Date: Tue, 10 Sep 2026 09:15:00 +0000
+Message-ID: <a1b2c3@acme-cloud-example.com>
+Authentication-Results: mx.example.com; spf=pass smtp.mailfrom=acme-cloud-example.com; dkim=pass header.d=acme-cloud-example.com; dmarc=pass
+Content-Type: text/plain; charset="UTF-8"
+
+Hi there,
+
+Your invoice #4471 for September is attached to your account dashboard.
+You can view and download it anytime by logging into your account at
+https://acme-cloud-example.com/billing
+
+Thank you for being a customer.
+
+Acme Cloud Billing Team

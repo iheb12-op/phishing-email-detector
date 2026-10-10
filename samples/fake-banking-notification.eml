@@ -1,0 +1,22 @@
+From: "Chase Bank Alerts" <alerts@chase-secure-banking.com>
+Reply-To: support@chase-secure-banking.com
+To: customer@example.com
+Subject: Payment failed - update your billing information
+Date: Tue, 10 Sep 2026 08:45:00 +0000
+Message-ID: <bank1@chase-secure-banking.com>
+Content-Type: multipart/mixed; boundary="BOUNDARY1"
+
+--BOUNDARY1
+Content-Type: text/plain; charset="UTF-8"
+
+Your recent payment failed. To avoid a wire transfer hold on your account,
+please confirm your identity and update your payment information within
+24 hours: https://chase-secure-banking.com/update
+
+--BOUNDARY1
+Content-Type: application/octet-stream; name="statement.pdf.exe"
+Content-Disposition: attachment; filename="statement.pdf.exe"
+Content-Transfer-Encoding: base64
+
+VGhpcyBpcyBhIHN5bnRoZXRpYyB0ZXN0IGF0dGFjaG1lbnQgLSBub3QgcmVhbCBtYWx3YXJlLg==
+--BOUNDARY1--

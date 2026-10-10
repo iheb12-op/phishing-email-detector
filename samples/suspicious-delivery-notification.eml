@@ -1,0 +1,14 @@
+From: "DHL Express" <no-reply@dhl-package-tracking.top>
+To: recipient@example.com
+Subject: Delivery failed - action required for your package
+Date: Tue, 10 Sep 2026 11:11:00 +0000
+Message-ID: <dhl1@dhl-package-tracking.top>
+Content-Type: text/plain; charset="UTF-8"
+
+Your package could not be delivered due to an incomplete address.
+Tracking number: DHL-88213-XT
+
+Please confirm your delivery details within 24 hours or your shipment
+will be returned: http://bit.ly/3fakeXY
+
+This is a final notice.

@@ -1,0 +1,68 @@
+spring:
+  config:
+    import:
+      - classpath:scoring-weights.yml
+      - classpath:trusted-domains.yml
+  application:
+    name: phishing-detector
+
+  # Default profile: embedded H2 file database. No Docker, no Postgres
+  # install required — the DB file is created automatically under
+  # backend/data/ on first run. Good for local dev and trying the project.
+  datasource:
+    url: jdbc:h2:file:./data/phishingdb;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE
+    username: sa
+    password: ""
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate   # schema is owned by Flyway migrations, not Hibernate auto-DDL
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+  servlet:
+    multipart:
+      # Security requirement #17: hard file size limit for uploaded .eml files
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+server:
+  port: 8080
+  error:
+    include-message: never       # never leak internal error details (security req #17)
+    include-stacktrace: never
+
+app:
+  security:
+    trusted-domains-config: classpath:trusted-domains.yml
+    scoring-config: classpath:scoring-weights.yml
+    allow-outbound-requests: false   # global kill-switch: never fetch remote URLs from analyzed emails
+
+logging:
+  level:
+    root: INFO
+    com.socanalyzer.phishingdetector: DEBUG
+  # Security requirement #17: never log raw email bodies / credentials / PII
+  pattern:
+    console: "%d{HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n"
+
+---
+# Optional PostgreSQL profile — activate with:
+#   mvn spring-boot:run -Dspring-boot.run.profiles=postgres
+# after running `docker compose up -d postgres` (or your own local Postgres).
+spring:
+  config:
+    activate:
+      on-profile: postgres
+  datasource:
+    url: jdbc:postgresql://localhost:5432/phishing_detector
+    username: phishing_user
+    password: ${DB_PASSWORD:changeme_in_env}
+    driver-class-name: org.postgresql.Driver

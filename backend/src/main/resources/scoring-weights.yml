@@ -1,0 +1,13 @@
+# Configurable risk scoring weights (requirement #10).
+# Changing these values re-tunes the entire detection engine without
+# touching analyzer code — import this file's values via
+# ScoringWeightsProperties (prefix "scoring").
+scoring:
+  low-weight: 5
+  medium-weight: 15
+  high-weight: 30
+  critical-weight: 50
+  safe-threshold: 25
+  suspicious-threshold: 50
+  likely-phishing-threshold: 75
+  max-score: 100

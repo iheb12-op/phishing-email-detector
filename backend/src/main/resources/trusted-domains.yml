@@ -1,0 +1,19 @@
+# Configurable trusted-domain list used for lookalike/typosquatting detection
+# (requirement #6). This is intentionally generic — add your organization's
+# own domains and commonly-impersonated partner/vendor domains here.
+trusted:
+  domains:
+    - paypal.com
+    - microsoft.com
+    - office365.com
+    - google.com
+    - apple.com
+    - amazon.com
+    - dropbox.com
+    - docusign.com
+    - chase.com
+    - bankofamerica.com
+    - wellsfargo.com
+    - dhl.com
+    - fedex.com
+    - ups.com
